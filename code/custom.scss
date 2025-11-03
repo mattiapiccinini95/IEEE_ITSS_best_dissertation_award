@@ -1,0 +1,338 @@
+/*-- scss:rules --*/
+
+:root{
+  --primary-color: #0f6e91;
+  --secondary-color: #FF9D3D;
+  --primary-color_light: #0f6e912c;
+  --secondary-color_light: #ff9e3d23;
+  --highlight-color_green: #03d103;
+  --highlight-color_red: #ff0000;
+  --highlight-color_yellow: #f2ff00;
+  --highlight-color_blue: #00a2ff;
+}
+
+
+
+/* Custom CSS for Reveal.js slides */
+
+.reveal h1 {
+  text-align: left;
+  vertical-align: top;
+  color: var(--primary-color);
+}
+
+.reveal h2 {
+  color: var(--primary-color);
+}
+
+
+/* Define the tbbox style */
+.tbbox {
+  position: relative;
+  background-color: #ffffff; /* Box background color */
+  border: 8px solid var(--primary-color); /* Border color */
+  border-radius: 25px; /* Rounded corners */
+  padding: 20px;
+  padding-top: 30px;
+  margin-top: 40px; /* Space between the box and previous content */
+  margin-bottom: 40px; /* Space below the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Title Styling */
+.tbbox h4 {
+  position: absolute;
+  top: -40px; /* Position above the border */
+  left: 20px; /* Align horizontally */
+  background-color: var(--primary-color); /* Title background */
+  color: white; /* Title text color */
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: x-large;
+  border-radius: 18px; /* Slightly rounded title corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+/* Title Styling */
+.tbbox .titlebox {
+  position: absolute;
+  top: -40px; /* Position above the border */
+  left: 20px; /* Align horizontally */
+  background-color: var(--primary-color); /* Title background */
+  color: white; /* Title text color */
+  padding: 0px 20px;
+  font-weight: bold;
+  border-radius: 15px; /* Slightly rounded title corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+.tbbox .titleboxL {
+  position: absolute;
+  top: -40px; /* Position above the border */
+  right: 20px; /* Align horizontally */
+  background-color: var(--primary-color); /* Title background */
+  color: white; /* Title text color */
+  padding: 0px 20px;
+  font-weight: bold;
+  border-radius: 15px; /* Slightly rounded title corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+
+
+.round-img-gray {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.round-img-gray img{
+  width: 85%; /* Set width to 100% of the parent */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 50%; /* Make the image circular */
+  object-position: top;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  aspect-ratio: 1 / 1;
+  filter: grayscale(100%);
+  border: 5px solid var(--primary-color);
+}
+
+
+// define a stile for professr entry with picutre (circular crop with colored border) name and role
+.columns .column .team-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.columns .column .team-entry img {
+  width: 85%; /* Set width to 100% of the parent */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 50%; /* Make the image circular */
+  object-position: top;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  aspect-ratio: 1 / 1;
+  filter: grayscale(100%);
+  border: 5px solid var(--primary-color);
+}
+
+
+.columns .column .team-entry .name {
+  width: 100%;
+  color: var(--primary-color); /* Set text color */
+  margin-bottom: 5px;
+  text-align: center; /* Center align text */
+  height: 2.8em; /* Set height to accommodate two lines */
+  line-height: 1.0em; /* Set line height */
+  overflow: hidden; /* Hide overflow text */
+  // word-wrap: break-word; /* Break long words */
+}
+
+.columns .column .team-entry p {
+  width: 100%;
+  text-align: center; /* Center align text */
+  // font-size: 10px;
+}
+
+.MJX-TEX {
+  font-family: "Arial Narrow";
+}
+
+
+.reveal .title:first-of-type {
+  text-align: right; /* Center the title */
+  width: 80%;
+  color: var(--primary-color);  /* Title color */
+  // position: absolute;
+  // right: 0px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 74px;
+  padding-right: 1% !important;
+}
+
+.reveal .subtitle:first-of-type {
+  text-align: right; /* Center the title */
+  width: 70%;
+  color: var(--primary-color);  /* Title color */
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 48px;
+  padding-right: 1% !important;
+}
+
+.reveal .quarto-title-authors {
+  width: 70%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  // padding-right: 0 !important;
+  padding-right: 1% !important;
+}
+
+.reveal .quarto-title-author {
+  text-align: right; /* Center the title */
+  color: var(--primary-color);  /* Title color */
+  padding-right: 0 !important;
+  font-size: 50px;
+  margin-top: 60px;
+}
+
+.reveal .quarto-title-authors .quarto-title-author:first-of-type .quarto-title-author-name {
+  text-align: right; /* Center the title */
+  color: var(--primary-color);  /* Title color */
+  padding-right: 0 !important;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+
+.reveal .date {
+  text-align: right; /* Center the title */
+  width: 80%;
+  color: var(--primary-color);  /* Title color */
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 45px;
+  padding-right: 1% !important;
+  margin-top: 60px;
+}
+
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+// .reveal .footer > p {
+//   display: none;
+// }
+
+.reveal .progress {
+  color: var(--primary-color) !important;
+}
+
+.reveal .slide-menu-button {
+  color: var(--primary-color) !important;
+}
+
+.reveal .slide-background:first-of-type {
+  // background-color: #b0efec; /* Background color (optional) */
+  background-image: url('../../../../../data/logos/IEEE_ITSC-2025_logo.png'), url('../../../../../data/logos/TUM_Logo_extern_mt_EN_CMYK_neg.pdf'), url('../../../../../data/logos/logo_unitn_scritta.jpg'); /* Path to your logo */
+  background-size: 15%, 22%, 22%; /* Adjust the size of the logo */
+  background-position-x:  15%, 12%, 12%;
+  background-position-y: 50%, 15%, 85%;
+  background-repeat: no-repeat, no-repeat, no-repeat; /* repeat-y */
+}
+
+
+.reveal ul > li > a{
+  color: var(--primary-color) !important;
+}
+
+.reveal .slide-menu-button a{
+  color: var(--primary-color) !important;
+}
+
+.reveal .slide-menu-button a i{
+  color: var(--primary-color) !important;
+}
+
+.reveal ul {list-style-type: square;}
+
+.reveal .slides {
+  text-align: left;
+  align-items: center;
+  // vertical alignment
+  vertical-align: middle;
+}
+
+
+.reveal .slides .timeline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: visible;
+}
+
+.reveal .slides .timeline .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-size: smaller;
+  overflow: visible;
+  // background-color: var(--primary-color_light);
+}
+
+.reveal .slides .timeline .item .text{
+  width: 100%;
+  min-height: 250px;
+  font-size: x-large;
+  // align vertical in centre
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  text-align: left;
+
+}
+
+.reveal .slides .timeline .item .arrow{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  // clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+  clip-path: polygon(2% 0%, 90% 0%, 98% 50%, 90% 100%, 2% 100%, 10% 50%);
+
+  // clip-path: polygon(-5% 0%, 95% 0%, 105% 50%, 95% 100%, -5% 100%, 5% 50%);
+  overflow: visible;
+}
+
+.reveal .slides .timeline .item .img-wrapper{
+  width: 90%;
+  // height: 45%;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.reveal .slides .timeline .item .img-wrapper .column2{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.reveal .slides .timeline .item .img-wrapper img{
+  padding: 0%;
+}
+
+.reveal .slides .timeline .item .img-wrapper .column2 img{
+  padding: 0%;
+}
+
+.reveal .slides .custom-small table {
+  font-size: .8em
+}
+

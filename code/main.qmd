@@ -1,0 +1,194 @@
+---
+title: "Artificial Drivers<br>for Online Time-Optimal<br>Vehicle Trajectory Planning and Control"
+bibliography: bibliography.bib
+cls: IEEEtran.cls
+author: 
+  - name: "Dr. Mattia Piccinini"
+    affiliation: "Technical University of Munich (Germany) & University of Trento (Italy)"
+# date: today
+date: "November 2025"
+# date-format: long
+date-format: "MMMM YYYY"
+resources: data
+execute: 
+  enabled: true
+slide-level: 2
+format:
+  revealjs: 
+    # Output file
+    output-file: main.html
+    # Table of Contents
+    toc: false
+    toc_float: true
+    toc-depth: 1
+    toc-location: body
+    toc-title: "Contents"
+    # Generate a self-contained file
+    # self-contained: true
+    self-contained-math: true
+    # template-partials:
+    #   - title-slide.html
+    theme: [ custom.scss]
+    slideNumber: true
+    center: false 
+    transition: slide
+    # logo and footer: 
+    # logo: unitn.png
+    footer: "Mattia Piccinini | Research Presentation | IEEE ITSC 2025"
+    auto-play-media: true
+    width: 1920
+    height: 1080
+    # html-math-method: katex #mathjax
+    html-math-method: 
+      method: mathjax
+    code-fold: true
+    # chalkboard: true
+    filters: [custom.lua]
+---
+
+## Autonomous Vehicle Racing
+
+:::{.notes}
+A bit about the motivation behind my research. The main goal of autonomous driving is to improve safety and sustainability. According to the European Commission, 90% of road accidents are due to human errors and furthermore, the EU target is to reach zero road fatalities by 2050. However, there are still some open challenges to overcome, such as safe and robust planning and control, operation in emergency scenarios, human-like driving behavior, and cooperation and negotiation with other agents. (in this field there is no common agreement on the preferred and more sustainable solution)
+:::
+
+::: {.incremental}
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+::: {.titlebox}
+Testbed for autonomous driving
+:::
+- Circuits are **safe** environments
+- Operation in **emergency scenarios** 
+:::
+::::
+
+:::: {.column width="50%"}
+:::{.tbbox}
+::: {.titlebox}
+Open Challenges
+:::
+- **Fast** decision-making in **adversarial** scenarios
+- **Nonlinear** dynamics, **non-convex** constraints
+:::
+::::
+:::
+
+:::{.columns}
+:::: {.column width="50%"}
+{{< video https://youtu.be/0QDLd0aoW6s?playlist=0QDLd0aoW6s&loop=1&autoplay=1&mute=1&controls=0&rel=0 width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+
+::::
+::::{.column width="50%"}
+{{< video https://youtu.be/uuLXiJD9fEA?playlist=uuLXiJD9fEA&loop=1&autoplay=1&mute=1&controls=0&rel=0 width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+
+<!-- <div id="contentframe" style="position:relative; left: 0%; width: 48%; height: 50%">
+{{< video https://youtu.be/0QDLd0aoW6s?playlist=0QDLd0aoW6s&loop=1&autoplay=1&mute=1&controls=0 width="100%" height="100%">}}
+</div>
+
+<div id="contentframe" style="position:relative; left: 50%; width: 48%; height: 50%">
+{{< video https://youtu.be/uuLXiJD9fEA?playlist=uuLXiJD9fEA&loop=1&autoplay=1&mute=1&controls=0 width="100%" height="100%">}}
+</div> -->
+
+::::
+:::
+:::
+
+## Artificial Race Driver
+
+::: {.incremental}
+- **Multi-round** closed-loop **<span style="color: green;">learning</span>** of the dynamics and max performance
+- Online **minimum-time** trajectory **planning**: **<span style="color: green;">learning-based</span>** **<span style="color: blue;">kineto-dynamical model predictive control</span>** 
+- Trajectory tracking with **<span style="color: blue;">model-structured NNs</span>** embedding **<span style="color: green;">prior knowledge</span>** of the vehicle dynamics
+:::
+
+![](./data/research/artificial_driver_architecture.PNG){width=45%}
+
+## Artificial Race Driver - Results
+
+:::{.columns}
+:::: {.column width="65%"}
+<div style="text-align: center;">
+![](./data/research/ARD_results_train_test_same_track.jpg){width=95% height=95%}
+
+![](./data/research/path_3D_view_Mugello_3D_with_numbers.png){width=65% height=65%}
+</div>
+
+::::
+::::{.column width="35%"}
+<div style="text-align: center;">
+
+**<span style="color: darkorange; font-size: 1.5em;">MLT$_{\mathrm{DT}}$</span>** reference:
+
+- offline minimum-lap-time 
+- full knowledge of vehicle & circuit
+
+<br>
+Our **<span style="color: green; font-size: 1.5em;">ARD</span>**:
+</div>
+
+- no prior knowledge 
+- learns and drives in real-time
+
+::::
+:::
+
+## Artificial Race Driver - Generalization
+
+<br>
+<div style="text-align: center;">
+![](./data/research/ARD_results_train_test_different_track.jpg){width=80% height=80%}
+
+**<span style="color: green;">Zero-shot generalization to unseen tracks</span>**
+</div>
+
+## Artificial Race Driver Goes Racing!
+
+:::{.columns}
+:::: {.column width="50%"}
+{{< video https://youtu.be/4BS_DD5LLLo?playlist=4BS_DD5LLLo&loop=1&autoplay=1&mute=1&controls=0 width="100%" height=450 autoplay="true" loop="true" muted="true">}}
+{{< video https://youtu.be/qWjEHUMyG74?playlist=qWjEHUMyG74&loop=1&autoplay=1&mute=1&controls=0 width="100%" height=450 autoplay="true" loop="true" muted="true">}}
+
+::::
+::::{.column width="50%"}
+{{< video https://youtu.be/SQ-U-oUNMT4?playlist=SQ-U-oUNMT4&loop=1&autoplay=1&mute=1&controls=0 width="100%" height=450 autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/watch?v=NaQXSNi9dS4 width="100%" height=450 autoplay="true" loop="true" muted="true">}}
+::::
+:::
+
+## Dynamic Obstacle Avoidance
+
+:::{.columns}
+:::: {.column width="40%"}
+:::{.tbbox}
+::: {.titlebox}
+MPTreeRace
+:::
+- **Neural** time-optimal **motion primitives**
+- Sampling-based planning
+:::
+::::
+
+:::: {.column width="60%" style="text-align: center;"}
+![](./data/research/MPT_PistaAzzurra_scenario_1_plot_1_cars.jpg){width=55%}
+::::
+:::
+
+<div style="text-align: center;">
+{{< video https://youtu.be/rpNc4EJU6uM?playlist=rpNc4EJU6uM&loop=1&autoplay=1&mute=1&controls=0&rel=0 width="80%" height=570 autoplay="true" loop="true" muted="true">}}
+</div>
+
+## Let's Collaborate!
+
+![](./data/people/mattia_piccinini.jpg){width=13% style="position: absolute; top: 6%; left: 80.5%;"}
+
+![](./data/logos/TUM_Logo_extern_mt_EN_CMYK_neg.jpg){width=23% style="position: absolute; top: 5%; left: 46%;"}
+
+![](./data/people/QR_google_scholar_piccinini.jpg){width=25% style="position: absolute; top: 40%; left: 75%;"}
+
+Reach me at: [**mattia.piccinini@tum.de**](mailto:mattia.piccinini@tum.de)
+
+<div id="contentframe" style="position:relative; left: 4%; top: 10%; width: 70%; height: 70%">
+{{< video https://youtu.be/h9mOr7O33OI?playlist=h9mOr7O33OI&loop=1&autoplay=1&mute=1&controls=0 width="100%" height="100%">}}
+</div>

@@ -1,1 +1,0 @@
-# IEEE_ITSS_best_dissertation_award
